@@ -104,7 +104,7 @@
 // arguments中还有一个自带属性callee，对应当前执行的函数对象。
 // Date对象 它是一个构造函数，使用时需要New，New出来的对象有很多方法。
 // Math对象，它是一个工具类对象，不需要New，直接传参用它的方法即可。 随机数。
-// 包装类 String() Number() Boolean() 可以把基本数据类型转成对应的对象 let a = New Number（3），可以当对象用
+// 包装类 String() Number() Boolean() 可以把基本数据类型转成对应的对象 let a = New Number（3）。可以当对象用
 // 字符串方法
 //
 //
