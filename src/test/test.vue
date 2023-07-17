@@ -35,7 +35,6 @@
 // continue可以直接跳过当次循环。 也是对离他最近的循环生效。也可以给外for起名字。
 // 对象
 
-
 // 内建对象 宿主对象 自定义对象
 // delete 对象.属性
 // 对象采用特殊的属性名 要用obj['123'] = 789  取的时候也要用obj['123']  推荐这种 因为可以传变量   n= ‘123’  obj[n]   但是中括号最后还要是字符串才行
@@ -116,6 +115,69 @@
 // split（，）  str.spilt(,) 根据字符串中的，拆成一个数组。如果根据其中的字符拆，则会把这个字符吃掉。传一个空串则会把每个字符都拆分成一个数组。
 // toUperCase() 转成大写
 // 字符串方法都不会影响原数据，都会返回新数据。
+// 正则 是用来制定规则的，或者把复活规则的东西提取出来。
+// let reg = New RegExp(正则表达式，匹配模式) 创建正则对象。   reg.test(str) 检查找str里面符不符合规则，返回布尔值。
+// 第二个参数 i 忽略是大小写，g全局匹配。
+// 字面量创建正则规则对象 reg = /正则表达式/匹配模式/        简单但没有构造函数灵活。
+// reg= /a|b/i/                   a|b 查找a或者b，忽略大小写。            
+// [ab] 也是或者的关系
+// [a-z] [A-Z] [A-z] 任意小写 大写 大小写
+// /abc|aec|afc/ 相当于 a[bef]c
+// [^ef] 除了ab以外的。 ^在[] 里是除了， 在外面是以什么开头。
+// [0-9] 任意数字
+// 正则与字符串结合使用。
+// let newstrArr = str.split(/[A-z]/) 根据任意字母拆分成一个数组。  这个方法即使不加g 也会全局匹配。
+// str.search('a') 除了跟indexOF一样，还可以用正则，str.search(/a[sh]f/) 返回索引或者-1，只会查找第一个，即使加了g也没用。
+// str.match(/[A-z]/) 只提取出一个字母，str.match(/[A-z]/g)  加g可以全部一个一个找出来。  返回在新数组。
+// str.replace(/a/gi, '888') 把所有的a替换成888 第二个参数用空串，等于删a。
+// 量词 /a{3}/  等于3个a，量词只对前面的字符生效，全体需要加（）包起来。[]是对前面全体，不用加().
+// /ab{1,3}/ b出现1到3次都行。/ab{2,}/ 2次以上才行。
+// /ab+c/ 至少一个b  /ab*c/ 0个或多个b都行。  /ab？c/  相等于1个或者0个。
+//  /^a/ 以a开头才行          /a$/ 必须以a结尾。   /^a$/ a既开始有结尾   /^a|a$/ 以啊开头或者以a结尾。
+// 手机号 let reg = /^1[3-9][3-9{9}$/  reg.test('13128889829')  返回true
+// .表示任意字符。 检测.用转义字符   /\./
+// let reg = New RegExp('\\.'，匹配模式)  找.
+// 只去除前后空格 str.replace(/^\s*|\s*$/g, '') 以空格开头 多个空格
+// 邮件正则 
+// 百度搜 常用正则表达式
+// dom 宿主对象，用js来操作网页。文档网页对象模型
+// 节点死忠 文档节点document 元素节点标签名 属性节点属性名 文本节点（里面内容）text
+// document.getElementById('btn') btn.innerHtml = 'hjhadjasdhj' btn.onclick = function() {}
+// scipt标签写在dom元素之前会拿不到dom元素，所以一般写dom下面。或者写上面时加个事件window.onload = function() {代码放这里}
+// document.getElementsByTagName('span') 一组 类数组对象 通过标签名
+// document.getElementsByName('disabled')[3].male   通过name属性名   一般获取表单属性  class不给用 用className.
+// innerHtml 元素内部的HTML代码 对于自结束标签 这个属性没用。
+// 案例 上一张下一张切换图片sqw
+// 获取元素的自己的子节点元素 document.getElementsById('city') city.getElementsByTagName('li') city里面的一组li
+// city.childNodes 所有子节点   标签与标签之间的空格会被当成空白节点。
+// city.children 所有子元素  不包括空白节点了 只是元素。 元素不包括空格空白 节点包括。
+// city.fisrtChild 第一个子节点 包括空白节点
+// city.fisrtElementChild 第一个子元素 不包括空白节点
+// 获取父亲 兄弟节点
+// city.parentNode  父亲节点
+// innerText 元素内部的文本内容  没有标签包着了。
+// city.previousSibling 前一个兄弟节点 节点会包含空白节点。
+//  city.previousElememntSibling 前一个兄弟元素 元素不会包含空白节点。
+// 表单.value  
+// 节点的属性 nodeValue就是文本节点的本文内容
+// 案例 全选练习 sqw
+// body 可以用document.getElementsByTagName  也可以直接document.body。 document.documentElement 是根标签html。  document.all是页面所有元素相当于document.getElementsByTagName('*')
+// 根据class获取 document.getElementsByclassName('box1')  一组
+// 根据css选择器  document.querySelect('.box div')  获取后代  
+// document.querySelect 只会返回第一个
+// document.querySelectAll 返回类数组对象
+// 增删改 节点 插入子节点appendChild() 删除子节点city.removeChild('bj') ===bj.parentNode.removeChild('bj')    在指定子节点前面差个子节点insertBefore(新，旧) createElement() creatTextNode() 替换子节点replaceChild(新， 旧)
+//  let li = document.createEmlement('li') let text = document.creatTextNode('广州')   li.appendChild(text)
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 // 
 // 
 // 
