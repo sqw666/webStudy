@@ -194,7 +194,7 @@
 // 事件冒泡 子的同名事件触发后会往上冒泡（祖先也会触发）。触发父级的同名事件。 点html没用，只会往上冒泡。 可以取消，事件event.cancelBuble = true
 // 事件委派 是为了解决后来加的子节点绑定事件，因为后来的没绑定上。 给祖先绑定事件。子元素冒上来，且用target可以获取是哪个子元素。event.target.className === 'link'，有隐患 可以用正则匹配。
 // 使用对象.事件 同名事件会覆盖。 但可以用这个 addEventListener('click'，function() {alert(1)},是否在捕获阶段触发一般给false)  不支持ie8 ie8用btn1.attachEvent('onclick'，function() {alert(1)})  执行顺序相反。
-// 天才 bind 形参还是在小括号里，没问题，指示外面套了个匿名函数，执行匿名函数时会调用形参callback(). ==== 从浏览器手里抢手动权利。sqw
+// 天才 bind函数。 形参回调函数callback还是在小括号里，没问题，只是外面套了个匿名函数，执行匿名函数时会调用形参callback.call(obj). ==== 从浏览器手里抢手动权利  sqw
 // 
 // 
 // 
