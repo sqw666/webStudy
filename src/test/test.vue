@@ -199,12 +199,12 @@
 // 拖拽功能 1当鼠标按下时onmousedown  2当鼠标移动时onmousemove  3当鼠标松开时，元素固定onmouseup。  嵌套这写。 document.onmousemove  = null 取消事件
 // btn1.setCapture() 捕获鼠标事件，抢事件。   取消捕获 btn1.realeaseCapture() 释放 。。。。。 只ie支持
 // 封装函数的本质是往上再扩一级，把变得东西当成形参穿进去。
-// 滚轮的事件
-// 
-// 
-// 
-// 
-// 
+// 滚轮的事件  box1.onmousewheel = function() {}   event.wheelDelta 滚轮方向
+// 键盘事件 onkeydown某个按键被按下 按住不松手会连续触发    onkeyup某个按键被松开   document.onkeydown = function(event) {event.keyCode}
+// input1.onkeydown = function() { return false会禁止输入}
+// BOM 浏览器对象模型 通过操作js来操作浏览器 window窗口 navigation信息识别不同浏览器 location地址栏信息 history历史记录前后页 screen显示器屏幕信息
+// navigation.userAgent
+// history.back() history.forward() history.go(-2)
 // 
 // 
 // 
