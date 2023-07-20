@@ -166,33 +166,33 @@
 // 根据css选择器  document.querySelect('.box div')  获取后代  
 // document.querySelect 只会返回第一个
 // document.querySelectAll 返回类数组对象
-// 增删改 节点 插入子节点appendChild() 删除子节点city.removeChild('bj') ===bj.parentNode.removeChild('bj')    在指定子节点前面差个子节点insertBefore(新，旧) createElement() creatTextNode() 替换子节点replaceChild(新， 旧)
+// 增删改 节点 插入子节点appendChild() 删除子节点city.removeChild('bj') ===bj.parentNode.removeChild('bj')     在指定子节点前面差个子节点insertBefore(新，旧) createElement() creatTextNode() 替换子节点replaceChild(新， 旧)
 //  let li = document.createEmlement('li') let text = document.creatTextNode('广州')   li.appendChild(text)
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+// city.innerHtml += '<li>广州</li>' 也可以这样加子节点，但是动静大。
+// 可以结合用先获取li    li.innerHtml = '广州'    city.appendChild(li)   推荐。
+// 案例 增删改练习。
+// for循环先执行，响应函数后执行。
+// 通过dom改样式   box1.style.width= '300px' (可能会用到驼峰写法)  权重干不过important   读取的时候也是只能读取的写的内敛样式
+// 获取元素当前正在显示的样式 元素.currentStyle.样式名  box1.currentStyle.width
+// 上面的currentStyle只能用于IE。
+// getComputedStyle() 是window的方法，通用。需要两个参数（元素对象，伪元素）。一般不获取伪元素。let obj = getComputedStyle(box1, null)  obj.width
+// 对象.属性，用点的方式取是是写死属性名。[] 这里才可以写变量的属性名。
+// 通过getComputedStyle() 和currentStyle 得到的都是只读的，不能这样改，要通过box1.style.width= '300px'   这样改。
+// 变量没找到会报错，而属性只会返回undefined。
+// 其他样式相关的属性 box1.clientHight  返回值不带px单位，可以直接计算。且包括（内边距padding）。（之前的获取的都是带单位。）  clientHight获取的也是只读的，不能被赋值。
+// offsetWithd 返回元素的宽度  包括padding和边框。也没有px。
+// offsetParent 获取当前元素的最近的定位祖先元素。如果都没有则返回body。
+// offsetLeft 当前元素相对于其定位祖先元素的水平偏移量。offsetTop.........垂直。
+// scrollHight 返回实际的滚动元素真正的高度。width 同理
+// scrollLeft 返回水平滚动条滚动的距离。top  同里
+// scrollHight - scrollTop 等于被滚动完的高度即clientHight可见高度也就是滚到底了。sqw  如果有水平滚动条在下面挡住一部分可见的，也要算的。
+// onscroll 当滚动条滚动时触发。 （滚动的元素）box.onscroll = function() {}
+// 事件对象
+// 鼠标 onmousemove 自带一个实参浏览器传的（ie8不传）   box1.onmousemove = function(event) {鼠标坐标 键盘按键  滚动方向}
+// clientX 获取当前可见窗口鼠标水平坐标 clientY  event.clientY。   但是box1.style.left是相对于整个页面的. 所以用 event.pageY  和它配合。
+// box1跟随鼠标移动 在document 里绑定才对document.onmousemove = 。  但是用clientX 不准确，可以用pageX，也可以滚动时，把盒子往下移动滚动距离 body的f父亲的html，谁滚动就是谁的 document.body.scrollTop
+// 事件冒泡 子的同名事件触发后会往上冒泡（祖先也会触发）。触发父级的同名事件。 点html没用，只会往上冒泡。 可以取消，事件event.cancelBuble = true
+// 事件委派 是为了解决后来加的子节点绑定事件，因为后来的没绑定上。 给祖先绑定事件。子元素冒上来，且用target可以获取是哪个子元素。event.target.className === 'link'，有隐患 可以用正则匹配。
 // 
 // 
 // 
