@@ -205,6 +205,25 @@
 // BOM 浏览器对象模型 通过操作js来操作浏览器 window窗口 navigation信息识别不同浏览器 location地址栏信息 history历史记录前后页 screen显示器屏幕信息
 // navigation.userAgent
 // history.back() history.forward() history.go(-2)
+// location地址栏信息  修改它 可以跳转。location.assign() 也可以跳转。 location.reload() 刷新  replace  不能回退
+// 定时器
+// let timer = setInterval(function(if() {clearInterval(timer)}) {}, 1000)   clearInterval(timer)  
+// 自动切换功能，如果数组到最后了，直接用模运算处理，就不需要if了、
+// 在开启新的定时之前 把上一个关了
+// 延时调用 let timeOut = setTimeout(function() {},3000) 不马上执行，隔3秒以后再执行，而且只会执行一次。 clearTimeout(timeOut)   和定时调用是可以互相代替的，一般常用定时调用。
+//  去px  parseInt(39px)
+// 盒子移动案例 sqw
+// 轮播图 案例 sqw  要保持向左转 在塞进去一张(第一张)放在后面，当转到这的时候，改索引，这时候他会往右回来，但是这样不好，所以当他到最后一张时，不仅改索引为0还要把偏移量left置为0；如果不加第一张到后面就会出现切换的过程不好隐藏。
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 // 
 // 
 // 
