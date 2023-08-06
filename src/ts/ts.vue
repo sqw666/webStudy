@@ -61,7 +61,7 @@
 // 在定义函数和类时不明确类型时，用泛型。  function fn<T>(a: T): T {return a}  定义一种类型时T， 参数要是T，返回值也要是T。
 // fn(a: 10)  fn<string>(a: 'hello')  手动指定类型T。 建议手动指定一下。
 // 泛型甚至可以继承某个接口， 传参的时候，要求实参必须实现这个接口的规范，接口中有的属性它都要有。传类也可以哦，只要实现这个接口就行。
-// 
+// 定义了类的时候也可以用泛型，class Myclass<T>{name: T; constructor(name: T) {this.name = name}}   const mc = new Myclass<string>(name: '孙悟空')
 // 
 // 
 // 
