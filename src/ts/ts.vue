@@ -59,7 +59,7 @@
 // 语法糖定义类 class Person {constructor(public name: string) { this.name = name }}
 // 泛型
 // 在定义函数和类时不明确类型时，用泛型。  function fn<T>(a: T): T {return a}  定义一种类型时T， 参数要是T，返回值也要是T。
-// fn(a: 10)  fn<string>(a: 'hello')  手动指定类型T。
+// fn(a: 10)  fn<string>(a: 'hello')  手动指定类型T。 建议手动指定一下。
 // 
 // 
 // 
