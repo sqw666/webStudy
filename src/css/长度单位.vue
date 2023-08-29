@@ -57,7 +57,7 @@ span {
     cursor: pointer;
 }
 .fff {
-    width: 20rem;   // rem是相对于htmly元素的字体大小的倍数
+    width: 20rem;   // rem是相对于html元素的字体大小的倍数
     height: 40rem;
     border: 2rem rgb(252, 0, 214) solid;
     font-size: 150%; // 相对于父元素的字体大小

@@ -41,7 +41,7 @@ export default {
     background-color: green;
     overflow: hidden; //最好的解决塌陷的问题
     text-align: center;  // 可以让行内快和文本水平居中    
-    line-height: 400px; // 可以让行内快和文本水平居中   
+    line-height: 400px; // 可以让行内快和文本垂直居中   
 }
 .yyy {
     width: 200px;
